@@ -53,14 +53,9 @@ function fetchComments() {
           return 'Just now'; 
       }
   }
+
   
-  // Function to periodically refresh the comments
-  setInterval(fetchComments, 5000);  // Refresh comments every 5 seconds
   
-  // Fetch comments initially
-  fetchComments();
-  
-  // Submit form using AJAX and fetch comments again
   document.getElementById('commentForm').addEventListener('submit', function(event) {
       event.preventDefault();
   
@@ -72,24 +67,31 @@ function fetchComments() {
       })
       .then(response => response.text())
       .then(() => {
-          // After submission, fetch comments again
           fetchComments();
-          this.reset();  // Reset form after submission
+          this.reset();
       })
       .catch(error => console.error('Error submitting comment:', error));
   });
-  
-  // List of bad words to check for in comments (simple example)
-  
+
   function updateClickCount() {
     fetch('/projects/clickerGet.php')
-      .then(response => response.text())
-      .then(count => {
-        document.getElementById('clickCount').innerText = count;
-      })
-      .catch(error => console.error('Error fetching click count:', error));
-  }
+        .then(response => response.text()) // Get the updated click count
+        .then(count => {
+            document.getElementById('clickCount').innerText = count; // Update the count on the page
+        })
+        .catch(error => console.error('Error fetching click count:', error)); // Log any errors
+}
+    
+  function incrementClick() {
+    fetch('/projects/clickerAdd.php') // Assuming this adds a click count
+        .then(response => response.text()) // Get response (optional)
+        .then(() => {
+            updateClickCount(); // After adding a click, update the count
+        })
+        .catch(error => console.error('Error adding click:', error)); // Log any errors
+}
 
+setInterval(fetchComments, 5000);
+setInterval(updateClickCount, 5000);
 
-
-  
+updateClickCount();
