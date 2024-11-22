@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="//boubas.net/assets/icon_warm.jpg?v=2" />
+    <link rel="stylesheet" type="text/css" href="/style.css?version=4">
+    <title>🅰️bout...</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <a class="active" href="//boubas.net">Home</a>
+    <a href="/about">About</a>
+    <a href="/projects">Projects 'n Games</a>
+    <a href="/downloads">Downloads</a>
+  </div>
+
+  <div class="lheader">
+    <h1>
+      <br>Misc projects I have going on!
+    </h1>
+  </div> 
+  <div class="rfooter">
+    <h2><a href="http://192.168.192.254:8080">Debug</a></h2>
+  </div>
+
+  <div class="container">
+    <div class="center">
+      <hr>
+      <p>Current Click Count: <span id="clickCount">Loading...</span></p>
+      <button id="clickerButton">Click Me!</button>
+      <hr>
+    </div>
+  </div>
+
+  <div class="center">
+    <h1>Submit a Comment woopie!</h1>
+    <form id="commentForm" action="submit_message.php" method="POST">
+      <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <br><sub>Jsyk! You can use HTML tags: <a href="/assets/htmltags.png">Legend</a></sub><br>
+
+            <br><label for="image_url">Image URL (optional):</label><br>
+            <input type="text" id="image_url" name="image_url"><br><br>
+            <button type="submit">Submit Message</button>
+
+            <br><br>
+    </form>
+
+    <div id="commentsSection">
+      <!-- Comments will be dynamically inserted here -->
+      <p>No comments yet. Be the first to submit a message!</p>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
