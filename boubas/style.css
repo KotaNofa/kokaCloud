@@ -84,3 +84,16 @@
         border-left: 2px solid black;
         height: 400px;
     }
+
+    .row {
+        display: flex;
+        justify-content: center; /* Centers the columns horizontally */
+        gap: 50px; /* Adds spacing between columns */
+        align-items: flex-start; /* Ensures columns shrink in height to fit their content */
+    }
+    
+    .column {
+        flex: 1 1 20%; /* Make the columns wider with 20% base width */
+        text-align: center;
+    }
+    

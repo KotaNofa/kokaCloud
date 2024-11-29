@@ -11,7 +11,7 @@
 <div class="navbar"></div>
 
 <div class="lheader">
-    <H1>Gallery of all the stuff my friends have made for me :)</H1>
+    <H1>WORK IN PROGRESS PSL IGNORE</H1>
 </div>
 
 
@@ -47,6 +47,7 @@
 <style>
 
 
+/* Base layout */
 .row {
   display: flex; 
   justify-content: center; /* Centers the columns horizontally */
@@ -54,17 +55,13 @@
   align-items: flex-start; /* Ensures columns shrink in height to fit their content */
 }
 
-
-.leftcolumn {
-  flex: 0 0 10%; 
-  text-align: left; 
-}
-
+.leftcolumn,
 .rightcolumn {
-  flex: 0 0 10%;
+  flex: 0 0 10%;  /* Base layout, 10% width on larger screens */
   text-align: left;
 }
 
+/* Styling for the posts */
 .post {
   padding: 10px;
   margin-left: 20px;
@@ -77,6 +74,26 @@
   word-wrap: break-word;
   text-align: center;
 }
+
+/* Media query for narrow screens (phones) */
+@media screen and (max-width: 450px) {
+  .row {
+    flex-direction: column;  /* Stack the columns vertically */
+    align-items: stretch;    /* Ensure the items stretch to fill the width */
+  }
+
+  .leftcolumn, 
+  .rightcolumn {
+    flex: 1 1 100%;  /* Take up the full width of the container */
+    margin-bottom: 20px; /* Adds space between stacked columns */
+  }
+
+  .post {
+    min-width: 100%;  /* Ensure posts fill the width of the container */
+    max-width: 100%;  /* Ensure posts fill the width of the container */
+  }
+}
+
 
 </style>
 
