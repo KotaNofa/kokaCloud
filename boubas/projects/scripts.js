@@ -92,6 +92,5 @@ function fetchComments() {
 }
 
 setInterval(fetchComments, 5000);
-setInterval(updateClickCount, 5000);
 
 updateClickCount();
