@@ -1,4 +1,4 @@
-fetch('/head.html')
+fetch('/template/head.html')
     .then(response => response.text())
     .then(data => {
         document.head.innerHTML += data;

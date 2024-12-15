@@ -1,4 +1,4 @@
-fetch('/navbar.html')  
+fetch('/template/navbar.html')  
     .then(response => response.text())  
     .then(data => {
         document.querySelector('.navbar').innerHTML = data;  
