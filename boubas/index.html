@@ -3,7 +3,7 @@
 
 
 <head>
-  <link rel="stylesheet" type="text/css" href="/style.css?version=2">
+  <link rel="stylesheet" type="text/css" href="/style.css?version=1">
   <script src="/loadhead.js" defer></script>
   <script src="/loadnav.js" defer></script> 
   <meta charset="UTF-8">
@@ -11,72 +11,163 @@
 </head>
 
 <body>
-
   <div class="navbar"></div>
-  
 
+  <br>
 
   <div class="landingcontainer">
 
+    <!-- Header Section -->
     <div class="lheader">
-      <h1>
-        Hi! I'm Koka!
-      </h1>
+      <h1>Hi! I'm Koka!</h1>
+    </div>
+
+    <!-- About Section -->
+    <div class="row">
+      <div class="column">
+        <div class="center">
+          <div class="bio">
+            <h2>
+              I'm a computer nerd, technician, artist, & just an all-around tinkerer.
+              <br><br>
+              Illustrator, 3D Artist, Computer Hardware Enthusiast, Programmer, Technician, Gamer, Photographer, Video Editor,
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="bio">
+          <img src="/assets/bouba.png" alt="Bouba">
+          <br>
+          <sub>Art by Marz</sub>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Socials Section -->
+    <div class="lheader">
+      <h1>Socials!</h1>
     </div>
 
     <div class="row">
       <div class="column">
-        <div class="center">
-          <h2>
-            I'm a computer geek, technician, artist, & just an all-around tinkerer.
-          </h2>
-        </div>
+        <h2>
+          <a href="https://steamcommunity.com/id/kokaboba/">Steam!</a>
+        </h2>
       </div>
       <div class="column">
-        <img src="/assets/bouba.png">
-        <br>
-        <sub>art by Marz</sub>
+        <h2>
+          <a href="https://bsky.app/profile/kokaboba.bsky.social">bSky!</a>
+        </h2>
+      </div>
+      <div class="column">
+        <h2>
+          <a href="https://bsky.app/profile/kokaboba.bsky.social">bSky!</a>
+        </h2>
+      </div>
+      <div class="column">
+        <h2>
+          <a href="https://www.youtube.com/@kokaboba">YouTube!</a>
+        </h2>
       </div>
     </div>
+    
+    <hr>
 
+    <!-- Contact Section -->
     <div class="center">
-      <h1>
-        Socials!
-      </h1>
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:koka@boubas.net">koka@boubas.net</a>
+      </p>
+      <h2>Special thank you...</h2>
+      <p>
+        Dedicated to the people in my life that inspire me to improve and be brave:
+        <br><br>
+        Marz & Laika
+      </p>
+      <br>
+      <img src="/assets/loveubdaygirl.png" width="403" height="217" alt="Special dedication">
     </div>
-    <div class="lheader">
-      <h2>
-        <a href="https://steamcommunity.com/id/kokaboba/">Steam!</a> 
-        <a href="https://bsky.app/profile/kokaboba.bsky.social"><br>bSky!</a>
-      </h2>
-    </div>
 
-
-
-  </div>
-
-</style>
-
-      <div class='center'>
-        <h2>Contact</h2>
-        <p>
-          Email: <a href="mailto:koka@boubas.net">koka@boubas.net</a><br>
-        </p>
-        <h2>Special thank you...</h2>
-        <p>
-          Dedicated to the people in my life that inspire me to improve and be brave:
-          <br><br>
-          Marz & Laika
-        </p>  
-        <br>
-        <img src="/assets/loveubdaygirl.png" width="403" height="217"> 
-      </div>
   </div>
 </body>
 </html>
 
+
 <style>  
-.column{
+
+/* Add maximum width for desktop view */
+.landingcontainer {
+  max-width: 1200px; /* Set maximum width */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 0 15px; /* Add horizontal padding to prevent touching the edges */
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-top-left-radius: 4% 4%;
+  border-top-right-radius: 4% 4%;
+  border-bottom-left-radius: 4% 4%;
+  border-bottom-right-radius: 4% 4%;
+  background-image: linear-gradient(#ffaaaa, #b6fdff );
+}
+
+body {
+    font-family: 'BoubasFont', cursive;
+    background-image: url('//boubas.net/assets/kokathing_4k.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* Optional: Ensures the background covers the entire viewport */
+    background-attachment: fixed; /* Optional: Keeps the background fixed during scrolling */
+    min-height: 100vh; /* Ensures the body takes up the full viewport height */
+}
+
+
+
+.bio  {
+  max-width: 500px;
+  background-color: #ffffff70;
+  overflow: hidden;
+  border-radius: 50px;
+  padding: 30px;
+}
+
+/* General Styles for Larger Screens */
+.column {
   text-align: center;
 }
+
+.row {
+  display: flex; 
+  justify-content: center; /* Centers the columns horizontally */
+  gap: 50px; /* Adds spacing between columns */
+  align-items: flex-start; /* Ensures columns shrink in height to fit their content */
+}
+
+/* Add media query to adjust for small screens (mobile) */
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: column; /* Stack the columns vertically */
+    justify-content: flex-start; /* Align the columns to the start */
+  }
+
+  .column {
+    text-align: center;
+    width: 100%; /* Ensure each column takes full width */
+    padding: 0px; /* Add some padding for spacing */
+  }
+
+  .landingcontainer {
+    padding: 15px; /* Add padding to the container */
+  }
+
+  img {
+    width: 100%; /* Make the image responsive */
+    max-width: 300px; /* Set a max-width for larger screens */
+  }
+}
+
 </style>
+
