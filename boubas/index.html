@@ -11,18 +11,17 @@
 </head>
 
 <body>
-  <div class="navbar"></div>
+  <div class="navbarcontainer"></div>
 
   <br>
 
   <div class="landingcontainer">
 
-    <!-- Header Section -->
+    <!-- About Section -->
     <div class="lheader">
       <h1>Hi! I'm Koka!</h1>
     </div>
 
-    <!-- About Section -->
     <div class="row">
       <div class="column">
         <div class="center">
@@ -112,7 +111,9 @@
   border-top-right-radius: 4% 4%;
   border-bottom-left-radius: 4% 4%;
   border-bottom-right-radius: 4% 4%;
-  background-image: linear-gradient(#ffaaaa, #b6fdff );
+  background-color: rgba(255, 255, 255, 0.6); /* Add semi-transparency */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Add WebKit support */
 }
 
 body {
@@ -148,6 +149,7 @@ body {
 
 /* Add media query to adjust for small screens (mobile) */
 @media screen and (max-width: 768px) {
+
   .row {
     flex-direction: column; /* Stack the columns vertically */
     justify-content: flex-start; /* Align the columns to the start */

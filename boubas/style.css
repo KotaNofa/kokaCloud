@@ -19,7 +19,7 @@
     /*default html settings*/
     body {
         font-family: 'BoubasFont', cursive;
-        background-image: linear-gradient(#ffaaaa, #ff7171 );
+        background-image: linear-gradient(#ffc64b, #ff7171 );
         background-repeat: no-repeat;
         min-height: 100%
     }
