@@ -1,106 +1,112 @@
 @font-face {
     font-family: 'BoubasFont';
     src: url('/assets/boubasfont.woff2') format('woff2');
-    }
-    
-/* Mobile adjustments */
+}
+
 .hide-on-mobile {
-    display: block; /* Hide by default on mobile */
+    display: block;
 }
 
 .show-on-mobile {
-    display: none; /* Show on mobile */
+    display: none;
+}
+
+
+.navbarcontainer {
+    position:  relative;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: #44947c;
+    overflow: hidden;
+    border-radius: 15px;
+    z-index: 999;
+    display: flex;
+}
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.navbar a:hover {
+    background-color: #ffc062;
+    color: black;
 }
 
 @media screen and (max-width: 450px) {
-    /* Adjust body zoom and transform for smaller screens */
-    body {
-        zoom: 80%;
-    }
 
-    .landing-row {
-        flex-direction: column; /* Stack the columns vertically */
-        justify-content: flex-start; /* Align the columns to the start */
-    }
-
-    .landing-column {
-        text-align: center;
-        width: 100%; /* Ensure each column takes full width */
-        padding: 0px; /* Add some padding for spacing */
-    }
-
-    .landing-container {
-        padding: 15px; /* Add padding to the container */
-    }
-
-    /* Show content on mobile */
     .hide-on-mobile {
-        display: none; /* Hide elements */
+        display: none;
     }
 
     .show-on-mobile {
-        display: block; /* Show elements */
+        display: block;
     }
+    
+    .navbar-container {
+        zoom: 80%;
+    }
+
 }
-        
 
 html, body {
-    height: 100%; /* Ensures both HTML and body take up full height */
-    margin: 0; /* Remove default margin */
+    height: 100%;
+    margin: 0;
+    background-color: #aac4c7;
+    background: linear-gradient(180deg, #aac4c7, #44947c93);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-h1 {
-    margin-top: 0; /* Remove top margin */
-    margin-bottom: 0; /* Remove bottom margin */
-    padding: 0; /* Remove padding */
+h1, h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
 }
 
-h2 {
-    margin-top: 0; /* Remove top margin */
-    margin-bottom: 0; /* Remove bottom margin */
-    padding: 0; /* Remove padding */
-}
-
-/*default body settings*/
 img {
     max-width: 100%;
     height: auto;
-    width: auto\9; /* ie8 */
+    width: auto\9;
 }
 
-/*center body text*/
 .lheader {
     text-align: left;
     margin-left: 20px;
-    img{border-radius: 10px;}
+    img {
+        border-radius: 10px;
+    }
 }
-/*left sided header*/
+
 .rfooter {
     text-align: right;
     margin-right: 30px;
-} 
-/*right sided footer*/
+}
 
-/*limit image size*/
 .center {
     text-align: center;
-    margin: 25px 50px
+    margin: 25px 50px;
 }
 
 .landing-background {
     font-family: 'BoubasFont', cursive;
     background-image: url('//boubas.net/assets/kokathing_4k.png');
     background-repeat: no-repeat;
-    background-size: cover; /* Optional: Ensures the background covers the entire viewport */
-    background-attachment: fixed; /* Optional: Keeps the background fixed during scrolling */
-    min-height: 100vh; /* Ensures the body takes up the full viewport height */
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
-/* Add maximum width for desktop view */
 .landing-container {
-    max-width: 1125px; /* Set maximum width */
-    margin: 0 auto; /* Center the content horizontally */
-    padding: 0 15px; /* Add horizontal padding to prevent touching the edges */
+    max-width: 1125px;
+    margin: 0 auto;
+    padding: 0 15px;
     border-top: 2px solid black;
     border-left: 2px solid black;
     border-right: 2px solid black;
@@ -109,26 +115,25 @@ img {
     border-top-right-radius: 20px 20px;
     border-bottom-left-radius: 20px 20px;
     border-bottom-right-radius: 20px 20px;
-    background-color: rgba(255, 255, 255, 0.6); /* Add semi-transparency */
-    backdrop-filter: blur(10px); /* Apply blur effect */
-    -webkit-backdrop-filter: blur(10px); /* Add WebKit support */
+    background-color: #ffffff7a;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* General Styles for Larger Screens */
 .landing-column {
     text-align: center;
 }
 
 .landing-row {
-    display: flex; 
-    justify-content: center; /* Centers the columns horizontally */
-    gap: 10px; /* Adds spacing between columns */
-    align-items: flex-start; /* Ensures columns shrink in height to fit their content */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-start;
 }
 
-.landing-bio  {
+.landing-bio {
     max-width: 500px;
-    background-color: hsla(0, 0%, 100%, 0.439);
+    background-color: hsla(0, 0%, 100%, 0.5);
     overflow: hidden;
     border-radius: 50px;
     padding: 30px;
@@ -142,11 +147,28 @@ img {
     padding: 10px;
 }
 
-.landing-divider{
+.landing-divider {
     border-left: 1px solid black;
     height: 500px;
 }
 
+@media screen and (max-width: 450px) {
+
+    .landing-row {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .landing-column {
+        text-align: center;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .landing-container {
+        padding: 15px;
+    }
+
+}
 
 
-    

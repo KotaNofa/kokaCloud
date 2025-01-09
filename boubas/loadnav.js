@@ -1,6 +1,6 @@
 fetch('/template/navbar.html')  
     .then(response => response.text())  
     .then(data => {
-        document.querySelector('.navbarcontainer').innerHTML = data;  
+        document.querySelector('.navbar-container').innerHTML = data;  
     })
     .catch(error => console.error('Error loading navbar:', error)); 

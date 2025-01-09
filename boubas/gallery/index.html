@@ -2,101 +2,116 @@
 <html lang="en">
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/style.css?version=1">
-  <script src="/loadnav.js" defer></script> 
+  <script src="/loadnav.js" defer></script>
 </head>
 
 <body>
+  <div class="gallery-background">
+    <div class="navbar-container"></div>
 
-<div class="navbarcontainer"></div>
+    <div class="show-on-mobile">
+      <br><br><br>
+    </div>
 
-<div class="lheader">
-    <H1>WORK IN PROGRESS PSL IGNORE</H1>
-</div>
-
-
-<div class="gallerycontainer">
-    <div class="row">
-        <div class="leftcolumn">
-          <div class="post">
-            <img src="https://boubas.net/assets/RDT_20241121_1328142375213754419313757.jpg" alt="An image was provided; The link is invalid." class="post-image">
-            <h2>Title of the post in question</h2>
-            <h3>author</h3>
-          </div>
-        </div> 
-        <div class="rightcolumn">
-          <div class="post">
-            <h2>whatever nonsense test</h2>
-            <h3>author</h3>
-          </div>
+    <div class="gallery-container">
+        <div class="lheader">
           <br>
-          <div class="post">
-            <img src="https://boubas.net/assets/loveubdaygirl.png" alt="An image was provided; The link is invalid." class="post-image">
-            <h2>Title of the post in question</h2>
-            <h3>author</h3>
-          </div>
+          <h1>This page is a work in progress!</h1>
           <br>
-          <div class="post">
-            <h2>whatever nonsense test but loooooooooooooooooooooooooonger</h2>
-            <h3>author</h3>
-          </div>
+        </div>
+
+        <div class="gallery-row">
+            <div class="gallery-column">
+              <div class="gallery-post">
+                <img src="https://boubas.net/assets/spawn.png"></a>
+              </div>
+             <div class="gallery-post">
+                This is a text post! Wow look at me! Hello! Post 3
+              </div>
+            </div>
+            <div class="gallery-column">
+              <div class="gallery-post">
+                This is a text post! Wow look at me! Hello! Post 2
+              </div>
+              <div class="gallery-post">
+                This is a text post! Wow look at me! Hello! Post 4
+              </div>
+            </div>
+        </div>
+        <div class="rfooter">
+          <h1>
+            <br>
+            You've reached the end!
+            <br>
+            <br>
+          </h1>
         </div>
     </div>
-</div>
+  </div>
+</body>
 
 <style>
 
-
-/* Base layout */
-.row {
-  display: flex; 
-  justify-content: center; /* Centers the columns horizontally */
-  gap: 50px; /* Adds spacing between columns */
-  align-items: flex-start; /* Ensures columns shrink in height to fit their content */
+.gallery-container {
+  max-width: 1125px;
+  margin: 0 auto;
+  padding: 0 15px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.leftcolumn,
-.rightcolumn {
-  flex: 0 0 10%;  /* Base layout, 10% width on larger screens */
+.gallery-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.gallery-column {
+  width: 450px;
+  flex-shrink: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.gallery-post {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border: 2px solid rgb(139, 139, 139);
+  border-radius: 25px;
+  padding: 30px;
   text-align: left;
+  margin-bottom: 20px;
 }
 
-/* Styling for the posts */
-.post {
-  padding: 10px;
-  margin-left: 20px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9; 
-  min-width: 500px;
-  max-width: 500px;
-  word-wrap: break-word;
-  text-align: center;
+.gallery-post img {
+  border-radius: 20px; 
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
 }
 
-/* Media query for narrow screens (phones) */
-@media screen and (max-width: 450px) {
-  .row {
-    flex-direction: column;  /* Stack the columns vertically */
-    align-items: stretch;    /* Ensure the items stretch to fill the width */
+@media screen and (max-width: calc(450px * 2 + 40px)) {
+  .gallery-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 
-  .leftcolumn, 
-  .rightcolumn {
-    flex: 1 1 100%;  /* Take up the full width of the container */
-    margin-bottom: 20px; /* Adds space between stacked columns */
+  .gallery-column {
+    width: 100%;
+    max-width: 450px;
   }
 
-  .post {
-    min-width: 100%;  /* Ensure posts fill the width of the container */
-    max-width: 100%;  /* Ensure posts fill the width of the container */
+  .gallery-container {
+    padding: 0;
+    margin: 0;
   }
 }
-
-
 </style>
 
-
-</body>
 </html>
