@@ -1,9 +1,15 @@
-.hide {
-    display: contents; /* Display as contents for non-mobile view */
+@font-face {
+    font-family: 'BoubasFont';
+    src: url('/assets/boubasfont.woff2') format('woff2');
+    }
+    
+/* Mobile adjustments */
+.hide-on-mobile {
+    display: block; /* Hide by default on mobile */
 }
 
-.unhide {
-    display: none; /* Hide by default */
+.show-on-mobile {
+    display: none; /* Show on mobile */
 }
 
 @media screen and (max-width: 450px) {
@@ -12,50 +18,35 @@
         zoom: 80%;
     }
 
-    .row {
+    .landing-row {
         flex-direction: column; /* Stack the columns vertically */
         justify-content: flex-start; /* Align the columns to the start */
     }
 
-    .column {
+    .landing-column {
         text-align: center;
         width: 100%; /* Ensure each column takes full width */
         padding: 0px; /* Add some padding for spacing */
     }
 
-    .landingcontainer {
+    .landing-container {
         padding: 15px; /* Add padding to the container */
     }
 
-    .hide {
+    /* Show content on mobile */
+    .hide-on-mobile {
         display: none; /* Hide elements */
     }
 
-    .unhide {
-        display: block; /* Make elements visible */
+    .show-on-mobile {
+        display: block; /* Show elements */
     }
 }
-
         
-@font-face {
-    font-family: 'BoubasFont';
-    src: url('/assets/boubasfont.woff2') format('woff2');
-    }
 
-/*shrink elemnts for mobile*/
-html 
-{
-min-height: 100%;
-} 
-
-/*default html settings*/
-body {
-    font-family: 'BoubasFont', cursive;
-    background-image: url('//boubas.net/assets/kokathing_4k.png');
-    background-repeat: no-repeat;
-    background-size: cover; /* Optional: Ensures the background covers the entire viewport */
-    background-attachment: fixed; /* Optional: Keeps the background fixed during scrolling */
-    min-height: 100vh; /* Ensures the body takes up the full viewport height */
+html, body {
+    height: 100%; /* Ensures both HTML and body take up full height */
+    margin: 0; /* Remove default margin */
 }
 
 h1 {
@@ -96,13 +87,17 @@ img {
     margin: 25px 50px
 }
 
-.divider{
-    border-left: 1px solid black;
-    height: 500px;
+.landing-background {
+    font-family: 'BoubasFont', cursive;
+    background-image: url('//boubas.net/assets/kokathing_4k.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* Optional: Ensures the background covers the entire viewport */
+    background-attachment: fixed; /* Optional: Keeps the background fixed during scrolling */
+    min-height: 100vh; /* Ensures the body takes up the full viewport height */
 }
 
 /* Add maximum width for desktop view */
-.landingcontainer {
+.landing-container {
     max-width: 1125px; /* Set maximum width */
     margin: 0 auto; /* Center the content horizontally */
     padding: 0 15px; /* Add horizontal padding to prevent touching the edges */
@@ -119,8 +114,19 @@ img {
     -webkit-backdrop-filter: blur(10px); /* Add WebKit support */
 }
 
+/* General Styles for Larger Screens */
+.landing-column {
+    text-align: center;
+}
 
-.bio  {
+.landing-row {
+    display: flex; 
+    justify-content: center; /* Centers the columns horizontally */
+    gap: 10px; /* Adds spacing between columns */
+    align-items: flex-start; /* Ensures columns shrink in height to fit their content */
+}
+
+.landing-bio  {
     max-width: 500px;
     background-color: hsla(0, 0%, 100%, 0.439);
     overflow: hidden;
@@ -128,7 +134,7 @@ img {
     padding: 30px;
 }
 
-.link {
+.landing-link {
     max-width: 500px;
     background-color: hsla(0, 0%, 100%, 0.439);
     overflow: hidden;
@@ -136,16 +142,9 @@ img {
     padding: 10px;
 }
 
-/* General Styles for Larger Screens */
-.column {
-    text-align: center;
-}
-
-.row {
-    display: flex; 
-    justify-content: center; /* Centers the columns horizontally */
-    gap: 10px; /* Adds spacing between columns */
-    align-items: flex-start; /* Ensures columns shrink in height to fit their content */
+.landing-divider{
+    border-left: 1px solid black;
+    height: 500px;
 }
 
 
