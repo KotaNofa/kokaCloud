@@ -78,16 +78,15 @@ img {
 
 .lheader {
     text-align: left;
-    margin-left: 20px;
-    img {
-        border-radius: 10px;
-    }
-}
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
 .rfooter {
     text-align: right;
-    margin-right: 30px;
-}
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
 
 .center {
     text-align: center;
