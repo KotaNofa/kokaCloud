@@ -12,99 +12,106 @@
     <div class="navbar-container"></div>
 
     <div class="show-on-mobile">
-      <br>
+      <br><br><br>
     </div>
 
     <div class="gallery-container">
-      <div class="lheader">
-        <h1>This page is a work in progress!</h1>
-      </div>
+        <div class="lheader">
+          <br>
+          <h1>This page is a work in progress!</h1>
+          <br>
+        </div>
 
-      <div class="gallery-row">
-        <div class="gallery-post">
-          <img src="https://boubas.net/assets/spawn.png" alt="Image Post">
-          This is a text post! Wow look at me! Hello! Post 1
+        <div class="gallery-row">
+            <div class="gallery-column">
+              <div class="gallery-post">
+                <img src="https://boubas.net/assets/spawn.png"></a>
+              </div>
+             <div class="gallery-post">
+                This is a text post! Wow look at me! Hello! Post 3
+              </div>
+            </div>
+            <div class="gallery-column">
+              <div class="gallery-post">
+                This is a text post! Wow look at me! Hello! Post 2
+              </div>
+              <div class="gallery-post">
+                This is a text post! Wow look at me! Hello! Post 4
+              </div>
+            </div>
         </div>
-        <div class="gallery-post">
-          This is a text post! Wow look at me! Hello! Post 2
+        <div class="rfooter">
+          <h1>
+            <br>
+            You've reached the end!
+            <br>
+            <br>
+          </h1>
         </div>
-        <div class="gallery-post">
-          <img src="https://boubas.net/assets/caption.gif" alt="Image Post">
-          This is a text post! Wow look at me! Hello! Post 3
-        </div>
-        <div class="gallery-post">
-          <img src="https://boubas.net/assets/loveubdaygirl.png" alt="Image Post">
-          This is a text post! Wow look at me! Hello! Post 4
-        </div>
-      </div>
-
-      <div class="rfooter">
-        <h1>You've reached the end!</h1>
-      </div>
     </div>
   </div>
 </body>
 
-  <style>
-    .gallery-container {
-      max-width: 1125px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 2px solid black;
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
+<style>
 
-    .gallery-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      gap: 20px;
-    }
+.gallery-container {
+  max-width: 1125px;
+  margin: 0 auto;
+  padding: 0 15px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
-    .gallery-post {
-      background-color: hsla(0, 0%, 100%, 0.5);
-      border: 2px solid rgb(139, 139, 139);
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+.gallery-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
+}
 
-    .gallery-post img {
-      border-radius: 5px; 
-      width: 100%; 
-      height: auto; 
-      object-fit: cover; 
-    }
-    
-    @media screen and (max-width: 450px) {
+.gallery-column {
+  width: 450px;
+  flex-shrink: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 
-      .gallery-container {
-      padding: 20px;
-      padding-left: 5px;
-      padding-right: 5px;
-    }
+.gallery-post {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border: 2px solid rgb(139, 139, 139);
+  border-radius: 25px;
+  padding: 30px;
+  text-align: left;
+  margin-bottom: 20px;
+}
 
-      .gallery-row {
-      gap: 5px;
-    }
+.gallery-post img {
+  border-radius: 20px; 
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+}
 
-    .gallery-row {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .gallery-post {
-      padding: 10px;
-    }
-
-    .gallery-post img {
-      border-radius: 5px; 
-    }
-
+@media screen and (max-width: calc(450px * 2 + 40px)) {
+  .gallery-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
-        
-  </style>
+
+  .gallery-column {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .gallery-container {
+    padding: 0;
+    margin: 0;
+  }
+}
+</style>
 
 </html>
