@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/style.css?version=1">
   <script src="/loadhead.js" defer></script>
   <script src="/loadnav.js" defer></script> 
+  <script src="/landingcomments.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -12,36 +13,26 @@
 <body>
   <div class="landing-background">
     <div class="navbar-container"></div>
-
-    <div class="show-on-mobile">
-      <br>
-      <br>
-      <br>
-    </div>
-  
     <div class="landing-container">
-  
-      <!-- About Section -->
-      <div class="section-header">
+      <div class="lheader">
         <h1>Hi! I'm Koka!</h1>
       </div>
-  
+
       <div class="landing-row">
         <div class="landing-column">
-          <div class="center">
             <div class="landing-bio">
               <h2>
-                I'm a computer nerd, technician, artist, & just an all-around tinkerer.
-                <div class="hide-on-mobile">
-                  <br>
-                  <br>
-                  Illustrator, 3D Artist, Computer Hardware Enthusiast, 
-                  Programmer, Technician, Gamer, Photographer, Video Editor,
-                </div>
+              I'm a computer nerd, technician, artist, & an all-around tinkerer.
+              <div class="hide-on-mobile">
+                <br>
+                <br>
+                Illustrator, 3D Artist, Computer Hardware Enthusiast, 
+                Programmer, Technician, Gamer, Photographer, Video Editor,
+              </div>
               </h2>
-            </div>
           </div>
         </div>
+
         <div class="landing-column">
           <div class="landing-bio">
             <h2>
@@ -56,9 +47,8 @@
       </div>
   
       <hr>
-  
-      <!-- Socials Section -->
-      <div class="section-header">
+
+      <div class="lheader">
         <h1>Socials!</h1>
       </div>
   
@@ -98,8 +88,6 @@
       
       <hr>
   
-      <!-- Contact Section -->
-  
       <div class="landing-row">
         <div class="landing-column">
           <div class="center">
@@ -123,13 +111,62 @@
         </div>
   
         <div class="landing-column">
-          <h2>empty space for later! who knows what will go here. <br>
-            i was thinking a comment section. <br>or maybe a server status 
-            for my minecraft but iunno!
-          </h2>
+          <div class="center">
+            Leave a comment?
+          </div>
+
+          <form id="commentForm" action="submit_comment.php" method="POST" onsubmit="resetForm()">
+
+            <div class="landing-comments-row">
+              <div class="landing-column">
+                <div class="landing-block">
+                  <button type="submit">Post!</button>
+                </div>
+
+                <div class="landing-block">
+                  <label for="username">*Username:</label>
+                  <input type="text" id="username" name="username" required>
+                </div>
+              </div>
+              
+              <div class="landing-column">
+                <div class="landing-block">
+                  <label for="message">*Message:</label>
+                  <textarea id="message" name="message" rows="1" required></textarea>
+                </div> 
+
+                <div class="landing-block">
+                  <label for="image_url">Image URL (optional):</label>
+                  <input type="text" id="image_url" name="image_url">
+                </div>
+              </div>
+            </div>
+            <hr>
+          </form>
+
+          <div class="commentsSection-preview"></div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function resetForm() {
+      document.getElementById('commentForm').reset();
+      }
+  </script>
+
 </body>
+
+<style>
+  .commentsSection-preview {
+    min-height: 200px;
+  }
+
+  .comment-preview {
+    text-align: center;
+    margin: 20px;
+  }
+</style>
+
 </html>

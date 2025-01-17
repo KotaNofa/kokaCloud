@@ -13,7 +13,9 @@
 
 
 .navbarcontainer {
-    position:  relative;
+    position:  fixed;
+    font-family: 'BoubasFont', cursive;
+    z-index: 999;
 }
 .navbar {
     position: fixed;
@@ -23,7 +25,6 @@
     background-color: #44947c;
     overflow: hidden;
     border-radius: 15px;
-    z-index: 999;
     display: flex;
 }
 .navbar a {
@@ -62,9 +63,10 @@ html, body {
     background: linear-gradient(180deg, #aac4c7, #44947c93);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: 'BoubasFont', cursive;
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
@@ -96,7 +98,6 @@ img {
 }
 
 .landing-background {
-    font-family: 'BoubasFont', cursive;
     background-image: url('//boubas.net/assets/kokathing_4k.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -105,24 +106,15 @@ img {
 }
 
 .landing-container {
+    transform: translateY(50px);
     max-width: 1125px;
     margin: 0 auto;
     padding: 0 15px;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    border-top-left-radius: 20px 20px;
-    border-top-right-radius: 20px 20px;
-    border-bottom-left-radius: 20px 20px;
-    border-bottom-right-radius: 20px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
     background-color: #ffffff7a;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-}
-
-.landing-column {
-    text-align: center;
 }
 
 .landing-row {
@@ -131,6 +123,11 @@ img {
     gap: 10px;
     align-items: flex-start;
 }
+
+.landing-column {
+    text-align: center;
+}
+
 
 .landing-bio {
     max-width: 500px;
@@ -146,6 +143,23 @@ img {
     overflow: hidden;
     border-radius: 20px;
     padding: 10px;
+}
+
+.landing-comments-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+
+.landing-block {
+    max-width: 500px;
+    background-color: hsla(0, 0%, 100%, 0.439);
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom:10px;
 }
 
 .landing-divider {
@@ -170,6 +184,16 @@ img {
         padding: 15px;
     }
 
+    .landing-comments-row {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0px;
+    }
+
+    .landing-block {
+        margin-bottom:10px;
+    }
+
 }
 
 .gallery-container {
@@ -181,20 +205,20 @@ img {
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-  }
+}
 
 .gallery-row {
-display: flex;
-justify-content: center;
-gap: 20px;
-align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-start;
 }
 
 .gallery-column {
-width: 550px;
-flex-shrink: 0;
-overflow-wrap: break-word;
-word-break: break-word;
+    width: 550px;
+    flex-shrink: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .gallery-post {
@@ -235,7 +259,4 @@ word-break: break-word;
     margin-bottom:  5px;
     padding: 10px;
   }
-
 }
-
-

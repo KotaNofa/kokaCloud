@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="stylesheet" type="text/css" href="/style.css?version=1">
   <script src="/loadhead.js" defer></script>
   <script src="/loadnav.js" defer></script> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <div class="navbarcontainer"></div>
-
+  <div class="navbar-container"></div>
   <div class="lheader">
     <h1>
       <br>Misc projects I have going on!
@@ -40,6 +42,44 @@
     </div>
   </div>
 
-  <script src="scripts.js?v=1"></script>
+  <script>
+    // Function to fetch and display comments
+    async function loadComments() {
+      const commentsSection = document.getElementById('commentsSection');
+
+      try {
+        const response = await fetch('fetchcomments.php');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const comments = await response.json();
+
+        // Clear existing content
+        commentsSection.innerHTML = '';
+
+        // Append fetched comments
+        if (comments.length > 0) {
+          comments.forEach(comment => {
+            const commentElement = document.createElement('div');
+            commentElement.innerHTML = `
+              <p><strong>${comment.username}:</strong> ${comment.message}</p>
+              ${comment.image_url ? `<img src="${comment.image_url}" alt="User Image" style="max-width: 200px;">` : ''}
+              <hr>
+            `;
+            commentsSection.appendChild(commentElement);
+          });
+        } else {
+          commentsSection.innerHTML = '<p>No comments yet. Be the first to submit a message!</p>';
+        }
+      } catch (error) {
+        commentsSection.innerHTML = `<p>Error loading comments: ${error.message}</p>`;
+      }
+    }
+
+    // Call the function to load comments when the page loads
+    window.addEventListener('DOMContentLoaded', loadComments);
+  </script>
+
 </body>
 </html>

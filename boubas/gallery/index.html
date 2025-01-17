@@ -2,45 +2,36 @@
 <html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/style.css?version=1">
-  <script src="/loadnav.js" defer></script>
+  <script src="/loadhead.js" defer></script>
+  <script src="/loadnav.js" defer></script> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
   <div class="gallery-background">
     <div class="navbar-container"></div>
 
-    <div class="show-on-mobile">
-      <br>
-    </div>
-
     <div class="gallery-container">
         <div class="lheader">
           <h1>This page is a work in progress!</h1>
         </div>
 
+        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+         THE WORKING PARK 
+        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
         <div class="gallery-row">
-            <div class="gallery-column">
-              <div class="gallery-post">
-                <img src="https://boubas.net/assets/spawn.png" alt="Image Post">
-                This is a text post! Wow look at me! Hello! Post 1
-              </div>
-              <div class="gallery-post">
-                <img src="https://boubas.net/assets/caption.gif" alt="Image Post">
-                This is a text post! Wow look at me! Hello! Post 3
-              </div>
-            </div>
-            <div class="gallery-column">
-              <div class="gallery-post">
-                This is a text post! Wow look at me! Hello! Post 2
-              </div>
-              <div class="gallery-post">
-                <img src="https://boubas.net/assets/loveubdaygirl.png" alt="Image Post">
-                This is a text post! Wow look at me! Hello! Post 4
+            <div class="gallery-column first"></div>
+            <div class="hide-on-mobile">
+              <div class="gallery-column second">
               </div>
             </div>
         </div>
+
+        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
         <div class="rfooter">
           <h1>
             You've reached the end!
@@ -48,6 +39,15 @@
         </div>
     </div>
   </div>
-</body>
 
+  <script>
+    window.onload = function() {
+      var script = document.createElement('script');
+      script.src = '//boubas.net/gallery/fetchposts.js';
+      script.type = 'text/javascript';
+      script.defer = true; 
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
 </html>
