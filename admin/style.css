@@ -1,0 +1,262 @@
+@font-face {
+    font-family: 'BoubasFont';
+    src: url('/assets/boubasfont.woff2') format('woff2');
+}
+
+.hide-on-mobile {
+    display: block;
+}
+
+.show-on-mobile {
+    display: none;
+}
+
+
+.navbarcontainer {
+    position:  fixed;
+    font-family: 'BoubasFont', cursive;
+    z-index: 999;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: #44947c;
+    overflow: hidden;
+    border-radius: 15px;
+    display: flex;
+}
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.navbar a:hover {
+    background-color: #ffc062;
+    color: black;
+}
+
+@media screen and (max-width: 450px) {
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .show-on-mobile {
+        display: block;
+    }
+    
+    .navbar-container {
+        zoom: 80%;
+    }
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #aac4c7;
+    background: linear-gradient(180deg, #aac4c7, #44947c93);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'BoubasFont', cursive;
+}
+
+h1, h2, h3, h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+}
+
+.lheader {
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.rfooter {
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+    margin: 25px 50px;
+}
+
+.landing-background {
+    background-image: url('//boubas.net/assets/kokathing_4k.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.landing-container {
+    transform: translateY(50px);
+    max-width: 1125px;
+    margin: 0 auto;
+    padding: 0 15px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #ffffff7a;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.landing-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.landing-column {
+    text-align: center;
+}
+
+
+.landing-bio {
+    max-width: 500px;
+    background-color: hsla(0, 0%, 100%, 0.5);
+    overflow: hidden;
+    border-radius: 50px;
+    padding: 30px;
+}
+
+.landing-link {
+    max-width: 500px;
+    background-color: hsla(0, 0%, 100%, 0.439);
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.landing-comments-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+
+.landing-block {
+    max-width: 500px;
+    background-color: hsla(0, 0%, 100%, 0.439);
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom:10px;
+}
+
+.landing-divider {
+    border-left: 1px solid black;
+    height: 500px;
+}
+
+@media screen and (max-width: 450px) {
+
+    .landing-row {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .landing-column {
+        text-align: center;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .landing-container {
+        padding: 15px;
+    }
+
+    .landing-comments-row {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0px;
+    }
+
+    .landing-block {
+        margin-bottom:10px;
+    }
+
+}
+
+.gallery-container {
+    max-width: 1125px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.gallery-column {
+    width: 550px;
+    flex-shrink: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.gallery-post {
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border: 2px solid rgb(139, 139, 139);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom:  20px;
+  }
+
+  .gallery-post img {
+    border-radius: 5px; 
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+  }
+
+@media screen and (max-width: calc(550px * 2)) {
+.gallery-row {
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.gallery-column {
+  width: 100%;
+  max-width: 450px;
+}
+
+.gallery-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .gallery-post {
+    margin-bottom:  5px;
+    padding: 10px;
+  }
+}
