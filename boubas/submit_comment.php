@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
 
         echo "New message created successfully.";
+        location.reload();
 
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

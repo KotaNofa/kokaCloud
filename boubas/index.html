@@ -115,7 +115,7 @@
             Leave a comment?
           </div>
 
-          <form id="commentForm" action="submit_comment.php" method="POST" onsubmit="resetForm()">
+          <form id="commentForm" method="POST">
 
             <div class="landing-comments-row">
               <div class="landing-column">
@@ -151,16 +151,30 @@
   </div>
 
   <script>
-    function resetForm() {
-      document.getElementById('commentForm').reset();
-      }
-  </script>
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+    
+        fetch('/submit_comment.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error('Error:', error));
+        document.getElementById('commentForm').reset();
+    });
+    </script>
 
 </body>
 
 <style>
   .commentsSection-preview {
     min-height: 200px;
+    text-align: center;
+    max-width: 500px;
   }
 
   .comment-preview {
