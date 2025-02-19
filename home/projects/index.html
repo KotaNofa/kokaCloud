@@ -9,77 +9,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+
+  <body>
   <div class="navbar-container"></div>
-  <div class="lheader">
-    <h1>
-      <br>Misc projects I have going on!
-    </h1>
-  </div> 
+  <div class="generic-container">
+    <div class="lheader">
+      <h1>
+        <br>Misc projects I have going on!
+      </h1>
+    </div>
 
-  <div class="rfooter">
-    <h2><a href="http://192.168.192.254:8080">Debug<sub>for admins only!!!</sub></a></h2>
-  </div>
+    <div class="gallery-post">
+      <h2>Hey! This part of the site is unfinished. Sorry!</h2>
+      <br><h3>TODO: fix the flashing of unstylized content</h3>
+      <br><h3>TODO: need to organize my stylesheet so the home page is nicer ugughghhg</h3>
+      <br><h3>TODO: add different media types for backgrounds, esp JXL</h3>
+      <br><h3>TODO: i wanna add a visitor count button or something</h3>
+      <br><h3>TODO: switch to nodejs backend maybe?</h3>
+      <br><h3>TODO: fix bio link buttons, also maybe update it to use the post border it looks nice</h3>
+      <br><h3>TODO: need to implement minecraft server status</h3>
+    oh right...
+    </div>
 
-  <div class="center">
-    <h1>Submit a Comment woopie!</h1>
-    <form id="commentForm" action="submit_message.php" method="POST">
-      <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" required><br><br>
-    
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <br><sub>Jsyk! You can use HTML tags: <a href="/assets/htmltags.png">Legend</a></sub><br>
-    
-            <br><label for="image_url">Image URL (optional):</label><br>
-            <input type="text" id="image_url" name="image_url"><br><br>
-            <button type="submit">Submit Message</button>
-    
-            <br><br>
-    </form>
-    <div id="commentsSection">
-      <p>No comments yet. Be the first to submit a message!</p>
+    <br>
+
+    <div class="gallery-post">
+      <h2>I have a minecraft server!</h2><br>
+      <h3>its vanilla 1.21.4, ip is this domain, uh, havent implemented a status indicator yet though...</h3>
     </div>
   </div>
-
-  <script>
-    // Function to fetch and display comments
-    async function loadComments() {
-      const commentsSection = document.getElementById('commentsSection');
-
-      try {
-        const response = await fetch('fetchcomments.php');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const comments = await response.json();
-
-        // Clear existing content
-        commentsSection.innerHTML = '';
-
-        // Append fetched comments
-        if (comments.length > 0) {
-          comments.forEach(comment => {
-            const commentElement = document.createElement('div');
-            commentElement.innerHTML = `
-              <p><strong>${comment.username}:</strong> ${comment.message}</p>
-              ${comment.image_url ? `<img src="${comment.image_url}" alt="User Image" style="max-width: 200px;">` : ''}
-              <hr>
-            `;
-            commentsSection.appendChild(commentElement);
-          });
-        } else {
-          commentsSection.innerHTML = '<p>No comments yet. Be the first to submit a message!</p>';
-        }
-      } catch (error) {
-        commentsSection.innerHTML = `<p>Error loading comments: ${error.message}</p>`;
-      }
-    }
-
-    // Call the function to load comments when the page loads
-    window.addEventListener('DOMContentLoaded', loadComments);
-  </script>
-
+</div>
 </body>
 </html>

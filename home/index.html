@@ -22,7 +22,7 @@
         <div class="landing-column">
             <div class="landing-bio">
               <h2>
-              I'm a computer nerd, technician, artist, & an all-around tinkerer.
+              I'm a computer nerd, artist, & an all-around tinkerer.
               <div class="hide-on-mobile">
                 <br>
                 <br>
@@ -90,6 +90,30 @@
   
       <div class="landing-row">
         <div class="landing-column">
+          <div class="gallery-post">
+          
+          <h2>Questions and Answers!</h2>
+
+          <br><h3>Why is it called Booba?</h3>
+          Because you aren't enunciating the vowels!<br>
+          You're thinking "No, the U modifies the O" <br>
+          Then the U is silent! My site, my rules, so say it with me: <br>
+          Boba, Boh-bah, Boubas net! <br>
+
+          <br><h3>What's the point of this site?</h3>
+          To not get hacked, this place has gone 2 years without any security breaches. Web-dev stuff is hell but I enjoy it flexing my computer knowledge comprehensively. <br>
+
+          <br><h3>What do you host this on?</h3>
+          koka.to is brought to you by my proprietary server network, which is brought to you by a broken HP laptop in my closet and more! 
+          </div>
+
+        </div>
+  
+        <div class="hide-on-mobile">
+          <div class="landing-divider"></div>
+        </div>
+  
+        <div class="landing-column">
           <div class="center">
             <h2>Contact</h2>
             <p>
@@ -105,82 +129,11 @@
             <img src="/assets/loveubdaygirl.png" alt="Special dedication" style="width: 300px; height: auto;">
           </div>
         </div>
-  
-        <div class="hide-on-mobile">
-          <div class="landing-divider"></div>
-        </div>
-  
-        <div class="landing-column">
-          <div class="center">
-            Leave a comment?
-          </div>
-
-          <form id="commentForm" method="POST">
-
-            <div class="landing-comments-row">
-              <div class="landing-column">
-                <div class="landing-block">
-                  <button type="submit">Post!</button>
-                </div>
-
-                <div class="landing-block">
-                  <label for="username">*Username:</label>
-                  <input type="text" id="username" name="username" required>
-                </div>
-              </div>
-              
-              <div class="landing-column">
-                <div class="landing-block">
-                  <label for="message">*Message:</label>
-                  <textarea id="message" name="message" rows="1" required></textarea>
-                </div> 
-
-                <div class="landing-block">
-                  <label for="image_url">Image URL (optional):</label>
-                  <input type="text" id="image_url" name="image_url">
-                </div>
-              </div>
-            </div>
-            <hr>
-          </form>
-
-          <div class="commentsSection-preview"></div>
-        </div>
       </div>
     </div>
   </div>
 
-  <script>
-    document.getElementById('commentForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(this);
-    
-        fetch('/submit_comment.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => console.error('Error:', error));
-        document.getElementById('commentForm').reset();
-    });
-    </script>
+
 
 </body>
-
-<style>
-  .commentsSection-preview {
-    min-height: 200px;
-    text-align: center;
-    max-width: 500px;
-  }
-
-  .comment-preview {
-    text-align: center;
-    margin: 20px;
-  }
-</style>
-
 </html>
