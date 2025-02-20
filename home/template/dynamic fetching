@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <link rel="stylesheet" type="text/css" href="/style.css?version=1">
-  <script src="/loadhead.js" defer></script>
-  <script src="/loadnav.js" defer></script> 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-  <div class="gallery-background">
-    <div class="navbar-container"></div>
-
-    <div class="gallery-container">
-        <div class="lheader">
-          <h1>This page is a work in progress!</h1>
-        </div>
 
         <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
          THE WORKING PARK 
@@ -32,7 +13,7 @@
 
         <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
-        <div class="rfooter">
+        <div class="generic-footer-r">
           <h1>
             You've reached the end!
           </h1>
@@ -49,5 +30,3 @@
       document.body.appendChild(script);
     }
   </script>
-</body>
-</html>

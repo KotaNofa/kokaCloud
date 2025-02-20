@@ -36,7 +36,7 @@
     font-size: 16px;
 }
 .navbar a:hover {
-    background-color: #ffc062;
+    background-color: #ff8162;
     color: black;
 }
 
@@ -71,27 +71,34 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    width: auto\9;
-}
+.generic-link-button {
+    max-width: 500px;
+    background-color: hsla(0, 0%, 100%, 0.439);
+    overflow: hidden;
+    border: 2px solid rgb(139, 139, 139);
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none; 
+    overflow: hidden;
+}   
 
-.lheader {
+
+.generic-header-l {
     text-align: left;
     margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.rfooter {
+.generic-footer-r {
     text-align: right;
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.center {
+.generic-center {
     text-align: center;
     margin: 25px 50px;
 }
@@ -108,8 +115,18 @@ img {
     -webkit-backdrop-filter: blur(10px);
 }
 
+.generic-post {
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border: 2px solid rgb(139, 139, 139);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom:  20px;
+}
+
 .landing-background {
-    background-image: url('');
+    background-image: url('/assets/kokathing_4k.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -148,13 +165,9 @@ img {
     padding: 30px;
 }
 
-.landing-link {
-    max-width: 500px;
-    background-color: hsla(0, 0%, 100%, 0.439);
-    overflow: hidden;
-    border-radius: 20px;
-    padding: 10px;
-}
+.link-button:hover {
+    background-color: #ff8162;
+  }
 
 .landing-comments-row {
     display: flex;
@@ -163,22 +176,16 @@ img {
     align-items: flex-start;
 }
 
-
-.landing-block {
-    max-width: 500px;
-    background-color: hsla(0, 0%, 100%, 0.439);
-    overflow: hidden;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom:10px;
-}
-
 .landing-divider {
     border-left: 1px solid black;
     height: 500px;
 }
 
 @media screen and (max-width: 450px) {
+
+    .landing-container {
+        padding: 15px;
+    }
 
     .landing-row {
         flex-direction: column;
@@ -191,10 +198,6 @@ img {
         padding: 0px;
     }
 
-    .landing-container {
-        padding: 15px;
-    }
-
     .landing-comments-row {
         flex-direction: column;
         justify-content: flex-start;
@@ -204,13 +207,17 @@ img {
     .landing-block {
         margin-bottom:10px;
     }
+}
 
+.gallery-background {
+    height: auto;
 }
 
 .gallery-container {
+    transform: translateY(50px);
     max-width: 1125px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 15px;
     border: 2px solid black;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.5);
