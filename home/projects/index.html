@@ -35,7 +35,43 @@
       <h2>I have a minecraft server!</h2><br>
       <h3>its vanilla 1.21.4, ip is this domain, uh, havent implemented a status indicator yet though...</h3>
     </div>
+
+    <div class="status"></div>
+
+
   </div>
 </div>
+
+<script>
+  async function fetchServerStatus() {
+    try {
+      const response = await fetch('/mcstats');
+      const data = await response.json();
+
+      if (response.ok) {
+        document.getElementById('status').innerHTML = 
+          `        
+          <h2>Server is Online</h2>
+          <p>Host: ${data.host}</p>
+          <p>Players Online: ${data.players.online}</p>
+          <p>Version: ${data.version.name}</p>
+          `;
+      } else {
+        document.getElementById('status').innerHTML =
+        `
+        <h2>Server is offline :(</h2>
+        <p>${data.error}</p>
+        `;
+      }
+    } catch (error) {
+      document.getElementById('status').innerHTML = `
+        <h2>Unable to fetch server status</h2>
+        <p>Error: ${error.message}</p>
+        `;
+    }
+  }
+  window.onload = fetchServerStatus;
+</script>
+
 </body>
 </html>
