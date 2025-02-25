@@ -34,34 +34,50 @@
       <h3>its vanilla 1.21.4, ip is this domain, uh, havent implemented a status indicator yet though...</h3>
     </div>
 
-    <div class="status"></div>
-
+    <div class="generic-post">
+      <div class="mcstats"></div>
+    </div>
 
   </div>
 </div>
 
 <script>
-  
-  fetch('/mcstats')
-      .then(response => response.json())
-      .then(data => {
-          const statusDiv = document.getElementById('status');
+document.addEventListener("DOMContentLoaded", function () {
 
-          if (data.online) {
-              statusDiv.innerHTML = `
-                  <p>Server is online!</p>
-                  <p>Players Online: ${data.players}</p>
-                  <p>Max Players: ${data.maxPlayers}</p>
-                  <p>Minecraft Version: ${data.version}</p>
-              `;
-          } else {
-              statusDiv.innerHTML = '<p>Server is offline</p>';
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          document.getElementById('status').innerHTML = '<p>Error fetching server status</p>';
-      });
+    fetch('/mcstats')
+        .then(response => response.json())
+        .then(data => {
+
+            const statusDiv = document.querySelector('.mcstats');
+
+            statusDiv.innerHTML = '';
+
+            if (data) {
+
+                const motdInfo = document.createElement('div');
+                motdInfo.innerHTML = data.result.motd.html;
+                statusDiv.appendChild(motdInfo);
+
+                const iconImg = document.createElement('img');
+                iconImg.src = data.result.icon;
+                statusDiv.appendChild(iconImg);
+
+                const onlineStatus = document.createElement('div');
+                onlineStatus.innerHTML = `<h3>Online Status:</h3><p>${data.result.online ? 'Online' : 'Offline'}</p>`;
+                statusDiv.appendChild(onlineStatus);
+
+                const playersInfo = document.createElement('div');
+                playersInfo.innerHTML = `<h3>Players Info:</h3><p>Players Online: ${data.result.players.online || 'N/A'}</p><p>Max Players: ${data.result.players.max || 'N/A'}</p>`;
+                statusDiv.appendChild(playersInfo);
+
+                const versionInfo = document.createElement('div');
+                versionInfo.innerHTML = `<h3>Minecraft Version:</h3><p>${data.result.version.name_raw || 'Unknown'}</p>`;
+                statusDiv.appendChild(versionInfo);
+            } else {
+                statusDiv.innerHTML = '<p>Invalid server response</p>';
+            }
+        })
+});
 </script>
 
 </body>

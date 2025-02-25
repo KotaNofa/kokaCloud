@@ -1,0 +1,12 @@
+useful nginx  commands 
+sudo tail -f /var/log/nginx/error.log
+
+sudo tail -f /var/log/nginx/access.log
+
+sudo certbot --nginx
+
+netstat -nlp|grep 25575
+
+ps aux | grep mcstatserver.js
+
+pm2 list
