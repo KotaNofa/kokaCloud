@@ -24,8 +24,6 @@
       <br><h3>TODO: fix the flashing of unstylized content</h3>
       <br><h3>TODO: add different media types for backgrounds, esp JXL</h3>
       <br><h3>TODO: i wanna add a visitor count button or something</h3>
-      <br><h3>TODO: switch to nodejs backend maybe?</h3>
-      <br><h3>TODO: need to implement minecraft server status</h3>
     oh right...
     </div>
 
@@ -43,34 +41,27 @@
 </div>
 
 <script>
-  async function fetchServerStatus() {
-    try {
-      const response = await fetch('/mcstats');
-      const data = await response.json();
+  
+  fetch('/mcstats')
+      .then(response => response.json())
+      .then(data => {
+          const statusDiv = document.getElementById('status');
 
-      if (response.ok) {
-        document.getElementById('status').innerHTML = 
-          `        
-          <h2>Server is Online</h2>
-          <p>Host: ${data.host}</p>
-          <p>Players Online: ${data.players.online}</p>
-          <p>Version: ${data.version.name}</p>
-          `;
-      } else {
-        document.getElementById('status').innerHTML =
-        `
-        <h2>Server is offline :(</h2>
-        <p>${data.error}</p>
-        `;
-      }
-    } catch (error) {
-      document.getElementById('status').innerHTML = `
-        <h2>Unable to fetch server status</h2>
-        <p>Error: ${error.message}</p>
-        `;
-    }
-  }
-  window.onload = fetchServerStatus;
+          if (data.online) {
+              statusDiv.innerHTML = `
+                  <p>Server is online!</p>
+                  <p>Players Online: ${data.players}</p>
+                  <p>Max Players: ${data.maxPlayers}</p>
+                  <p>Minecraft Version: ${data.version}</p>
+              `;
+          } else {
+              statusDiv.innerHTML = '<p>Server is offline</p>';
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('status').innerHTML = '<p>Error fetching server status</p>';
+      });
 </script>
 
 </body>
