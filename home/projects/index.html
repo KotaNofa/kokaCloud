@@ -4,87 +4,221 @@
 <head>
   <link rel="stylesheet" type="text/css" href="/style.css?version=1">
   <script src="/loadhead.js" defer></script>
-  <script src="/loadnav.js" defer></script> 
+  <script src="/loadnav.js" defer></script>
+  <script src="/projects/mcstats.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-
-  <body>
+<body>
   <div class="navbar-container"></div>
-  <div class="generic-container">
-    <div class="generic-header-l">
-      <h1>
-        Misc projects I have going on!
-      </h1>
-    </div>
 
-    <div class="generic-post">
-      <h2>Hey! This part of the site is unfinished. Sorry!</h2>
-      <br><h3>TODO: fix the flashing of unstylized content</h3>
-      <br><h3>TODO: add different media types for backgrounds, esp JXL</h3>
-      <br><h3>TODO: i wanna add a visitor count button or something</h3>
-    oh right...
-    </div>
+  <div class="projects-background">
+    <div class="generic-container">
+      <div class="generic-header-l">
+        <h1>Misc projects I have going on!</h1>
+      </div>
 
-    <br>
+      <div class="generic-row">
 
-    <div class="landing-row">
-      <div class="landing-column">
-        <div class="generic-post">
-          <div class="mcstats"></div>
+        <div class="generic-column">
+          <div class="mc-post">
+            <h2>I have a Minecraft Server! Wow!</h2>
+            <br>
+            <div class="button-link">
+              Server IP: boubas.net
+            </div>
+            <a href="/dynmap/" class="button-link">Full Screen World Map</a>
+            <br>
+          </div>
+        </div>
+
+        <div class="generic-column">
+          <div class="mc-container">
+            <div class="mc-row">
+              <div class="mc-column">
+                <div class="mc-image"></div>
+              </div>
+              <div class="mc-column">
+                <div class="mc-row">
+                  <div class="mc-column">
+                    <div class="mc-version"></div>
+                  </div>
+                  <div class="mc-playercount-column">
+                    <div class="mc-players"></div>
+                  </div>
+                  <div class="mc-column">
+                    
+                  </div>
+                </div>
+                <div class="mc-motd">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="landing-column">
-        <div class="generic-post">
-          <iframe src="/dynmap/" width=600 height=375 frameborder="15"></iframe>
+      <div class="dynmap">
+        <iframe src="/dynmap/"></iframe>
       </div>
+
+      <div class="generic-footer-r">
+        <h2>End of page (for now)</h2>
+      </div>
+
     </div>
-
-
-
   </div>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    fetch('/mcstats')
-        .then(response => response.json())
-        .then(data => {
-
-            const statusDiv = document.querySelector('.mcstats');
-
-            statusDiv.innerHTML = '';
-
-            if (data) {
-
-                const motdInfo = document.createElement('div');
-                motdInfo.innerHTML = data.result.motd.html;
-                statusDiv.appendChild(motdInfo);
-
-                const iconImg = document.createElement('img');
-                iconImg.src = data.result.icon;
-                statusDiv.appendChild(iconImg);
-
-                const onlineStatus = document.createElement('div');
-                onlineStatus.innerHTML = `<h3>Online Status:</h3><p>${data.result.online ? 'Online' : 'Offline'}</p>`;
-                statusDiv.appendChild(onlineStatus);
-
-                const playersInfo = document.createElement('div');
-                playersInfo.innerHTML = `<h3>Players Info:</h3><p>Players Online: ${data.result.players.online || 'N/A'}</p><p>Max Players: ${data.result.players.max || 'N/A'}</p>`;
-                statusDiv.appendChild(playersInfo);
-
-                const versionInfo = document.createElement('div');
-                versionInfo.innerHTML = `<h3>Minecraft Version:</h3><p>${data.result.version.name_raw || 'Unknown'}</p>`;
-                statusDiv.appendChild(versionInfo);
-            } else {
-                statusDiv.innerHTML = '<p>Invalid server response</p>';
-            }
-        })
-});
-</script>
-
 </body>
+
 </html>
+
+
+<style>
+@font-face {
+  font-family: 'minecraftFont';
+  src: url('/assets/minecraftFont.ttf') format('truetype');
+}
+
+/* Main container for Minecraft stats */
+.mc-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border: 2px solid rgb(139, 139, 139);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  max-height: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  font-family: 'minecraftFont';
+  color: white;
+}
+
+/* Row layout inside the Minecraft container */
+.mc-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  background-color: lightgray;
+  width: 100%;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  max-width: fit-content;
+}
+
+/* Column layout for each Minecraft item */
+.mc-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+/* Align player count column to the right */
+.mc-playercount-column {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Image container in the Minecraft row */
+.mc-image {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+/* MOTD (Message of the Day) container */
+.mc-motd,
+.mc-version,
+.mc-players {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: gray;
+}
+a
+/* Specific styling for MOTD and Version containers */
+.mc-motd {
+  background-color: gray;
+}
+
+.mc-version {
+  background-color: gray;
+}
+
+.mc-players {
+  padding: 5px;
+}
+
+/* Dynmap iframe container */
+.dynmap {
+  position: relative;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border: 2px solid rgb(139, 139, 139);
+  border-radius: 10px;
+  padding: 20px;
+  height: 600px;
+}
+
+/* Full-width iframe for Dynmap */
+.dynmap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 450px) {
+  .dynmap {
+    padding: 10px;
+    height: 400px;
+  }
+
+  .mc-container {
+    height: 450px;
+  }
+}
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(69, 69, 69);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mc-post {
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border: 2px solid rgb(139, 139, 139);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom:  20px;
+    min-height: 101px;
+}
+
+.projects-background {
+  background-image: url(/assets/spawn.png);
+}
+
+</style>
