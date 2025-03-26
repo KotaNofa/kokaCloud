@@ -13,84 +13,95 @@
   <div class="navbar-container"></div>
   <div class="gallery-background">
     <div class="gallery-container">
-        <div class="generic-header-l">
-          <h1>This page is a work in progress!</h1>
-          <div class="generic-post">
-            TODO: build the page lmao
-          </div>
+      <div class="generic-header-l">
+        <h1>This page is a work in progress!</h1>
+        <div class="generic-post">
+          TODO: build the page lmao
         </div>
+      </div>
+      <div class="gallery-row">
+        <div class="gallery-post">
+          <img src="https://via.placeholder.com/550x300" alt="Example Post 1">
+          <p>Example post 1 description</p>
+        </div>
+        <div class="gallery-post">
+          <img src="https://via.placeholder.com/550x300" alt="Example Post 2">
+          <p>Example post 2 description</p>
+        </div>
+        <div class="gallery-post">
+          <img src="https://via.placeholder.com/550x300" alt="Example Post 3">
+          <p>Example post 3 description</p>
+        </div>
+        <div class="gallery-post">
+          <img src="https://via.placeholder.com/550x300" alt="Example Post 4">
+          <p>Example post 4 description</p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
 </html>
 
 <style>
-  .gallery-background {
-    height: auto;
+.gallery-background {
+  height: auto;
 }
 
 .gallery-container {
-    transform: translateY(50px);
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  transform: translateY(50px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .gallery-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two posts per row */
+  gap: 20px;
+  justify-content: center;
 }
 
 .gallery-column {
-    width: 550px;
-    flex-shrink: 0;
-    overflow-wrap: break-word;
-    word-break: break-word;
+  width: 550px;
+  flex-shrink: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .gallery-post {
-    background-color: hsla(0, 0%, 100%, 0.5);
-    border: 2px solid rgb(139, 139, 139);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom:  20px;
-  }
-
-  .gallery-post img {
-    border-radius: 5px; 
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-  }
-
-@media screen and (max-width: calc(550px * 2)) {
-.gallery-row {
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border: 2px solid rgb(139, 139, 139);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
-.gallery-column {
+.gallery-post img {
+  border-radius: 5px;
   width: 100%;
-  max-width: 450px;
+  height: auto;
+  object-fit: cover;
 }
 
-.gallery-container {
+@media screen and (max-width: 450px) {
+  .gallery-container {
     padding-left: 5px;
     padding-right: 5px;
   }
 
+  .gallery-row {
+    grid-template-columns: 1fr;
+  }
+
   .gallery-post {
-    margin-bottom:  5px;
+    margin-bottom: 5px;
     padding: 10px;
   }
 }
