@@ -18,7 +18,7 @@ html, body {
   font-family: 'BoubasFont', cursive;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
@@ -178,12 +178,32 @@ h1, h2, h3, h4 {
   margin-bottom: 20px;
 }
 
+.generic-post-l {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border: 2px solid rgb(139, 139, 139);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
 .landing-background {
   background-image: url('/assets/kokathing_4k.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
+}
+
+  .landing-bio-l {
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border: 2px solid rgb(139, 139, 139);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 /* Comments Section */
