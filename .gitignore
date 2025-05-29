@@ -1,5 +1,4 @@
-home/assets
-home/cdn
-node_modules
-splash/shared
-boubaxD.png
+home/assets/*
+home/cdn/*
+node_modules/*
+splash/shared/*
