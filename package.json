@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
-    "mc-stats": "^1.0.8",
-    "mysql2": "^3.12.0",
-    "node-mcstatus": "^1.2.1"
-  }
-}

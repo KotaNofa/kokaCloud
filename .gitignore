@@ -1,4 +1,4 @@
 home/assets/*
 home/cdn/*
-node_modules/*
+backend/node_modules/*
 splash/shared/*
