@@ -14,77 +14,95 @@
   <div class="navbar-container"></div>
 
   <div class="projects-background">
-    <div class="generic-container">
+    <div class="gallery-container">
       <div class="generic-header-l">
-        <h1>Misc projects I have going on!</h1>
+        <h1>Misc Projects I've done!</h1>
       </div>
-
-      <div class="generic-row">
-
-        <div class="generic-column">
-          <div class="mc-post">
-            <h2>I have a Minecraft Server! Wow!</h2>
-            <br>
-            <div class="button-link">
-              Server IP: boubas.net
+      <div class="gallery-row">
+        
+        <div class="gallery-post">
+          <div class=generic-row>
+            <div class="generic-column">
+              <img src="/assets/beachville.png">
             </div>
-            <a href="/dynmap/" class="button-link">Full Screen World Map</a>
-            <br>
-          </div>
-        </div>
-
-        <div class="generic-column">
-          <div class="mc-container">
-            <div class="mc-row">
-              <div class="mc-column">
-                <div class="mc-image"></div>
-              </div>
-              <div class="mc-column">
-                <div class="mc-row">
-                  <div class="mc-column">
-                    <div class="mc-version"></div>
-                  </div>
-                  <div class="mc-playercount-column">
-                    <div class="mc-players"></div>
-                  </div>
-                  <div class="mc-column">
-                    
-                  </div>
-                </div>
-                <div class="mc-motd">
-                </div>
-              </div>
+            <div class="generic-column">
+              <a href="minecraft/" class="button-link">Minecraft Server Map!</a>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="dynmap">
-        <iframe src="/dynmap/"></iframe>
-      </div>
-
-      <br>
-      <h2>Archived Worlds</h2>
-      <div class="generic-row">
-        <div class="generic-row">
-          
-          <a href="//boubas.net/cdn/hometown_2025.7z" class="button-link">Y25 Q1  - (1.35 GB)</a>
+        <div class="gallery-post">
+          <p>To be added...</p>
         </div>
 
-        <div class="generic-row">
-          <a href="//boubas.net/cdn/hometown_2024.7z" class="button-link">Y23 Q3  - (3.08 GB)</a>
-        </div>
-
-        <div class="generic-row">
-          <a href="//boubas.net/cdn/hometown_2023.7z" class="button-link">Y23 Q1  - (12.3 GB)</a>
-        </div>
       </div>
-
-      <div class="generic-footer-r">
-        <h2>End of page (for now)</h2>
-      </div>
-
     </div>
   </div>
 </body>
 </html>
+
+<style>
+.gallery-background {
+  height: auto;
+}
+
+.gallery-container {
+  transform: translateY(50px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.gallery-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two posts per row */
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery-column {
+  width: 550px;
+  flex-shrink: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.gallery-post {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border: 2px solid rgb(139, 139, 139);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.gallery-post img {
+  border-radius: 5px;
+  width: 50%;
+  height: auto; 
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+@media screen and (max-width: 450px) {
+  .gallery-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .gallery-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-post {
+    margin-bottom: 5px;
+    padding: 10px;
+  }
+}
+</style>
