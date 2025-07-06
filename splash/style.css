@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'BoubasFont';
-    src: url('/boubasfont.ttf') format('ttf');
+    font-family: 'boubasfont';
+    src: url('/assets/boubasfont.ttf') format('truetype');
 }
 
 .hide-on-mobile {
@@ -14,9 +14,9 @@
 
 .navbarcontainer {
     position:  fixed;
-    font-family: 'BoubasFont', cursive;
     z-index: 999;
 }
+
 .navbar {
     position: fixed;
     top: 0;
@@ -56,13 +56,13 @@
 }
 
 html, body {
+    font-family: 'boubasfont';
     height: 100%;
     margin: 0;
-    background-color: #aac4c7;
-    background: linear-gradient(180deg, #aac4c7, #44947c93);
+    background-color: #F5F5F5;
+    background: linear-gradient(0deg, #6ACCAB, #F5F5F5);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'BoubasFont', cursive;
 }
 
 h1, h2, h3, h4 {
