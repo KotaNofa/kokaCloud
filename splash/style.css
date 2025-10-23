@@ -167,7 +167,7 @@ h1, h2, h3, h4 {
 
 .link-button:hover {
     background-color: #ff8162;
-  }
+}
 
 .landing-comments-row {
     display: flex;
@@ -247,45 +247,45 @@ h1, h2, h3, h4 {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom:  20px;
-  }
+}
 
-  .gallery-post img {
+.gallery-post img {
     border-radius: 5px; 
     width: 100%; 
     height: auto; 
     object-fit: cover; 
-  }
+}
 
 @media screen and (max-width: calc(550px * 2)) {
-.gallery-row {
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
+    .gallery-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
 
-.gallery-column {
-  width: 100%;
-  max-width: 450px;
-}
+    .gallery-column {
+        width: 100%;
+        max-width: 450px;
+    }
 
-.gallery-container {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
+    .gallery-container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 
-  .gallery-post {
-    margin-bottom:  5px;
-    padding: 10px;
-  }
+    .gallery-post {
+        margin-bottom:  5px;
+        padding: 10px;
+    }
 }
 
 .commentsSection-preview {
     min-height: 200px;
     text-align: center;
     max-width: 500px;
-  }
+}
 
-  .comment-preview {
+.comment-preview {
     text-align: center;
     margin: 20px;
-  }
+}
