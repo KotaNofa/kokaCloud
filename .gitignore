@@ -1,4 +1,3 @@
-home/assets/*
-home/cdn/*
 backend/node_modules/*
-splash/shared/*
+koka/shared/*
+cdn/*
