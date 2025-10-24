@@ -17,6 +17,14 @@ Where it (all at once) provides:
 
 Without being too verbose, the overall architecure is set up like this:
 
-<img src="https://cdn.boubas.net/github/architecture.png" height="400">
+<img src="https://cdn.boubas.net/github/architecture.png" width="400">
 
-Such that 
+An intent while creating it was to leave as few entry points for vulnerabilities as possible. Some of these security choices include:
+ - A bare minimum amount of open ports for public services.
+ - A tunneled VPN for admin configuration.
+ - All traffic is routed and proxied with Cloudflare. 
+ 
+ The result, so far, has been a very safe experience with no security events even though bot and webcrawler traffic is *always* high.
+ 
+ <img src="https://cdn.boubas.net/github/cf.png" width="400">
+
